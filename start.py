@@ -164,4 +164,7 @@ async def setup():
 
 # Remplacez 'YOUR_TOKEN' par le token de votre bot
 keep_alive()
+if keep_alive == true:
+    print("Keep_alive = true")
+        
 bot.run(token)
