@@ -5,6 +5,29 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+import discord
+from discord.ext import commands
+import json
+import os
+from dotenv import load_dotenv
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "La bot est en ligne"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start
+
+
+load_dotenv()
 token = os.environ['TOKEN']
 
 class BotMain(commands.Cog):
@@ -161,4 +184,5 @@ async def setup():
     await bot.add_cog(BotMain(bot))
 
 # Remplacez 'YOUR_TOKEN' par le token de votre bot
+keep_alive()
 bot.run(token)
