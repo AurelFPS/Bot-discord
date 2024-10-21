@@ -5,7 +5,6 @@ import os
 from dotenv import load_dotenv
 from keep_alive import keep_alive
 
-
 load_dotenv()
 token = os.environ['TOKEN']
 
@@ -164,7 +163,5 @@ async def setup():
 
 # Remplacez 'YOUR_TOKEN' par le token de votre bot
 keep_alive()
-if keep_alive == True:
-    print("Keep_alive = true")
-        
+
 bot.run(token)
