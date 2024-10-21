@@ -3,28 +3,7 @@ from discord.ext import commands
 import json
 import os
 from dotenv import load_dotenv
-
-load_dotenv()
-import discord
-from discord.ext import commands
-import json
-import os
-from dotenv import load_dotenv
-from flask import Flask
-from threading import Thread
-
-app = Flask('')
-
-@app.route('/')
-def home():
-    return "La bot est en ligne"
-
-def run():
-    app.run(host='0.0.0.0', port=8080)
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start
+from keep_alive import keep_alive
 
 
 load_dotenv()
